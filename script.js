@@ -156,7 +156,7 @@ function KiemtraForm() {
     var errorDes = document.getElementById("err_des")
     var errorDate = document.getElementById("err_date")
 
-    errorTitle.innerText = errorDes.innerText = errorDate.innerText = ''
+    errorTitle.innerText = errorDes.innerText = errorDate.innerText = '';
 
     if (tittle == "") {
         errorTitle.innerText = "Nhập tiêu đề"
