@@ -33,6 +33,13 @@ body {
     padding: 16px 16px;
 }
 
+.box {
+    position: sticky;
+    top: 0px;
+    flex: 1 1 0%;
+    padding: 1em;
+}
+
 #header {
     background-color: rgb(255, 255, 255);
     padding: 1em;
@@ -216,7 +223,7 @@ h2.font {
     box-sizing: border-box;
     align-items: flex-start;
     padding: 16px 16px;
-    margin: 0px 15px 15px 15px;
+    margin: 16px 15px 15px 15px;
     border-radius: 10px;
 }
 
