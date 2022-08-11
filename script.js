@@ -2,9 +2,6 @@ let data = [];
 let selectedPostId = null;
 let msg = document.getElementById("msg");
 let msg2 = document.getElementById("msg2");
-
-
-
 //add new item
 document.getElementById("add").addEventListener("click", (e) => {
     e.preventDefault();
@@ -14,11 +11,11 @@ document.getElementById("add").addEventListener("click", (e) => {
     const date = document.getElementById("dateInput").value;
     const priority = document.getElementById("priority").value;
     const tempData = { id, title, desc, date, priority };
-    msg.innerHTML = "*Yêu cầu nhập thông tin";
     if (isValid(tempData)) {
         data.push(tempData);
 
         showData();
+        msg.innerHTML = "Thêm thành công";
         localStorage.setItem("data", JSON.stringify(data));
     }
 });
@@ -34,7 +31,7 @@ document.getElementById("updateBtn").addEventListener("click", (e) => {
             const newDesc = document.getElementById("textareaUpdate").value;
             const newDate = document.getElementById("dateInputUpdate").value;
             const newPriority = document.getElementById("priorityUpdate").value;
-            msg2.innerHTML = "*Đã cập nhập thành công";
+            // msg2.innerHTML = "*Đã cập nhật thành công";
             data.splice(data.indexOf(tempPost), 1);
             tempPost.title = newTitle;
             tempPost.desc = newDesc;
@@ -77,7 +74,6 @@ const deletePost = (id) => {
     localStorage.setItem("data", JSON.stringify(data));
     refreshData();
 };
-
 const renderRow = (data) => `
     <div id=${data.id} class="row">
         <div class ="display">
@@ -119,3 +115,65 @@ const refreshData = () => {
 };
 
 refreshData();
+
+const btn = document.querySelector(".done");
+const toast = document.querySelector(".toast");
+const closeIcon = document.querySelector(".close");
+const progress = document.querySelector(".progress");
+
+btn.addEventListener("click", () => {
+    $('.toast').toast('show')
+    toast.classList.add("show");
+    progress.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 5000);
+
+    setTimeout(() => {
+        progress.classList.add("show");
+    }, 5300);
+})
+
+closeIcon.addEventListener("click", () => {
+    toast.classList.remove("show");
+
+    setTimeout(() => {
+        progress.classList.add("show");
+    }, 300);
+});
+
+
+const searchFun = () => {
+    let filter = document.getElementById('searchItem').value;
+}
+
+function KiemtraForm() {
+    var tittle = document.getElementById("textInput").value
+    var des = document.getElementById("textarea").value
+    var date = document.getElementById("dateInput").value
+    var errorTitle = document.getElementById("err_title")
+    var errorDes = document.getElementById("err_des")
+    var errorDate = document.getElementById("err_date")
+
+    errorTitle.innerText = errorDes.innerText = errorDate.innerText = ''
+
+    if (tittle == "") {
+        errorTitle.innerText = "Nhập tiêu đề"
+    }
+    if (des == "") {
+        errorDes.innerText = "Nhập mô tả"
+    }
+    if (date == "") {
+        errorDate.innerText = "Chọn ngày sinh"
+    }
+    return true
+}
+// function validation(){
+//   var titler = document.getElementById('textInput').value;
+
+//   if(titler == ""){
+//     document.getElementById('username').innerHTML = "Please fill the title field";
+//     return false;
+//   }
+// }
