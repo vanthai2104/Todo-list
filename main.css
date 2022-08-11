@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#msg {
+    color: red;
+}
+
+#msg2 {
+    color: green;
+}
+
+.overall {
+    display: flex;
+    /* flex-direction: column; */
+    background-color: rgb(152, 193, 217);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+    align-items: flex-start;
+    padding: 16px 16px;
+}
+
+.box {
+    position: sticky;
+    top: 0px;
+    flex: 1 1 0%;
+    padding: 1em;
+}
+
+#header {
+    background-color: rgb(255, 255, 255);
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: rgb(0, 0, 0 / 20%) 1px 2px 4px;
+}
+
+h2.font {
+    margin: 0px;
+    font-size: 2em;
+    text-align: center;
+    color: rgb(74, 74, 74);
+    padding: 0.8rem 0px;
+}
+
+.tieude {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.title {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+.tieude input {
+    border: 1px solid rgb(244, 67, 54);
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.tieude1 input {
+    border: 1px solid rgb(244, 67, 54);
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.des {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+
+/* .space textarea {
+    border: 1px solid rgb(244, 67, 54);
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+} */
+
+.spacedes1 {
+    width: 100%;
+    height: 69px;
+}
+
+.duedate {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+.ngaysinh {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.dateandpriority>div {
+    flex: 1 1 0%;
+}
+
+.dateandpriority {
+    display: flex;
+    gap: 1em;
+    margin-top: 9px;
+}
+
+.soluong {
+    /* display: inline-block; */
+    font-size: 0rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+.pri {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    color: rgb(74, 74, 74);
+}
+
+.lower select {
+    border: 1px solid rgb(221, 221, 221);
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.spacedate {
+    border: 1px solid rgb(244, 67, 54);
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.aboutprioty {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.add button {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 1em;
+    background: rgb(0, 101, 161);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 0.3em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.phantodo {
+    flex: 2 1 0%;
+}
+
+.phantodo {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+    align-items: flex-start;
+    padding: 16px 16px;
+    margin: 15px 15px 15px 15px;
+    border-radius: 10px;
+}
+
+.todolist h2 {
+    margin: 0px;
+    font-size: 1.5rem;
+    color: rgb(0, 101, 161);
+    font-weight: 700;
+    padding: 0px 0.5em;
+    font-family: "Open Sans", sans-serif;
+}
+
+.todolist {
+    flex-direction: row;
+    margin: 10px 0px 25px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    min-width: 220px;
+    border: 1px solid rgb(0, 101, 161);
+    border-radius: 5px;
+    padding: 0px 10px;
+    height: 30px;
+}
+
+.search button {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.search i {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.space {
+    height: calc(100vh - 235px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.bluk {
+    height: 80px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    display: flex;
+    background: rgb(241, 241, 241);
+    color: rgb(74, 74, 74);
+    margin: 10px 0px;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    flex-direction: row;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.done_remove {
+    display: flex;
+    gap: 1em;
+}
+
+.done {
+    border: 1px solid rgb(221, 221, 221);
+    background: rgb(0, 101, 161);
+    color: rgb(255, 255, 255);
+    padding: 0.5em 1.5em;
+    margin-left: 0.3em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s
+}
+
+.remove {
+    border: 1px solid rgb(0, 101, 161);
+    background: rgb(255, 255, 255);
+    color: rgb(0, 101, 161);
+    padding: 0.5em 1.5em;
+    margin-left: 0.3em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
+}
+
+.remove i,
+.done i {
+    height: 1em;
+}
+
+.remove:hover {
+    background-color: rgb(118, 187, 228);
+    ;
+}
+
+.content {
+    margin-bottom: 1em;
+    border: 1px solid transparent;
+}
+
+#posts {
+    width: 100%;
+}
+
+#posts div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.display {
+    -webkit-box-pack: justify;
+    box-sizing: border-box;
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    height: 3em;
+    padding: 1em 0.5em;
+    border-radius: 0.3em;
+    -webkit-box-align: center;
+    box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px;
+    margin-bottom: 0.3em;
+}
+
+.display_dad {
+    -webkit-box-align: center;
+}
+
+.see {
+    -webkit-box-align: baseline;
+    flex-direction: row;
+    color: rgb(255, 255, 255);
+    margin: 0px 0.5em;
+}
+
+.display_dad_child {
+    background-color: rgb(255, 87, 34);
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.2em 2.5em;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.see p {
+    line-height: 1rem;
+    font-weight: 600;
+    color: rgb(58, 58, 58);
+    letter-spacing: 0.5px;
+    margin: 0px 0.5em;
+}
