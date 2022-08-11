@@ -280,23 +280,24 @@ h2.font {
     padding: 10px;
 }
 
-.action {
-    padding: 0px 1em;
-    margin: 10px 0px;
-    margin-bottom: 16px;
-    flex-direction: row;
+.bluk {
     height: 80px;
+    -webkit-box-align: center;
     align-items: center;
-    display: flex;
-    border-radius: 8px;
-    background: rgb(241, 241, 241);
+    -webkit-box-pack: justify;
     justify-content: space-between;
+    display: flex;
+    background: rgb(241, 241, 241);
     color: rgb(74, 74, 74);
+    margin: 10px 0px;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    flex-direction: row;
 }
 
-.action span {
-    font-family: "Open Sans", sans-serif;
-    align-items: center;
+.done_remove {
+    display: flex;
+    gap: 1em;
 }
 
 .done {
@@ -308,9 +309,10 @@ h2.font {
     border-radius: 5px;
     cursor: pointer;
     display: flex;
+    -webkit-box-align: center;
     align-items: center;
     opacity: 0.8;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s
 }
 
 .remove {
@@ -322,19 +324,20 @@ h2.font {
     border-radius: 5px;
     cursor: pointer;
     display: flex;
+    -webkit-box-align: center;
     align-items: center;
     opacity: 0.8;
     transition: all 0.3s ease 0s;
 }
 
-.action .done:hover {
-    color: white;
-    background-color: rgb(74, 74, 74);
+.remove i,
+.done i {
+    height: 1em;
 }
 
-.action .remove:hover {
-    color: white;
-    background-color: rgba(10, 107, 165, 0.933);
+.remove:hover {
+    background-color: rgb(118, 187, 228);
+    ;
 }
 
 .btn1 {
