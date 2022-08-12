@@ -70,7 +70,7 @@ h2.font {
 }
 
 .tieude input {
-    border: 1px solid rgb(244, 67, 54);
+    border: 1px solid rgb(221, 221, 221);
     box-sizing: border-box;
     width: 100%;
     height: 35px;
@@ -99,6 +99,10 @@ h2.font {
     font-weight: 600;
     margin-bottom: 0.6em;
     color: rgb(74, 74, 74);
+}
+
+.err {
+    color: red;
 }
 
 
@@ -182,7 +186,7 @@ h2.font {
 }
 
 .spacedate {
-    border: 1px solid rgb(244, 67, 54);
+    border: 1px solid rgb(221, 221, 221);
     box-sizing: border-box;
     width: 100%;
     height: 35px;
@@ -201,8 +205,8 @@ h2.font {
 
 .add button {
     width: 100%;
-    padding: 0.8em;
-    margin-top: 1em;
+    padding: 1em;
+    margin-top: 0;
     background: rgb(0, 101, 161);
     color: rgb(255, 255, 255);
     border: none;
@@ -241,6 +245,12 @@ h2.font {
     margin: 10px 0px 25px;
     justify-content: space-between;
     display: flex;
+}
+
+.toast__close {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .searching {
@@ -398,7 +408,7 @@ table {
     align-items: center;
 }
 
-.toast-content .check {
+.check {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -478,7 +488,7 @@ table {
     background-color: rgb(245, 245, 245);
     width: 100%;
     height: 3em;
-    padding: 1em 0.5em;
+    padding: 1em 1.5em;
     border-radius: 0.3em;
     -webkit-box-align: center;
     box-shadow: rgb(0 0 0 / 7%) 0px 1px 1px;

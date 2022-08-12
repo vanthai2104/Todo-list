@@ -18,6 +18,7 @@ document.getElementById("add").addEventListener("click", (e) => {
         msg.innerHTML = "Thêm thành công";
         localStorage.setItem("data", JSON.stringify(data));
     }
+    document.getElementById("myForm").reset();
 });
 
 //update item
@@ -31,7 +32,7 @@ document.getElementById("updateBtn").addEventListener("click", (e) => {
             const newDesc = document.getElementById("textareaUpdate").value;
             const newDate = document.getElementById("dateInputUpdate").value;
             const newPriority = document.getElementById("priorityUpdate").value;
-            // msg2.innerHTML = "*Đã cập nhật thành công";
+            msg2.innerHTML = "*Đã cập nhật thành công";
             data.splice(data.indexOf(tempPost), 1);
             tempPost.title = newTitle;
             tempPost.desc = newDesc;
@@ -78,20 +79,22 @@ const renderRow = (data) => `
     <div id=${data.id} class="row">
         <div class ="display">
             <div class ="display_dad">
-                <input type="checkbox" value="0">
+                <input type="checkbox" value="${data.id}" class="task_checkbox">
                 <div class ="see">
                     <div class="display_dad_child">${data.priority}</div>
                     <p>${data.title}</p>
                 </div>
             </div>
             <div class ="knot">
-                <i onClick ="deletePost('${data.id}');createPosts()" data-bs-toggle="modal" data-bs-target="#deleteModal" class="fas fa-trash-alt mx-2"></i>
-                <i onClick= "editPost('${data.id}')" data-bs-toggle="modal" data-bs-target="#update" class="fas fa-edit"></i>   
+                <i onClick ="deletePost('${data.id}');createPosts()" data-bs-toggle="modal" data-bs-target="#deleteModal" class="fas fa-trash-alt mx-2"></i>   
+                <i onClick= "editPost('${data.id}')" data-bs-toggle="modal" data-bs-target="#update" class="fas fa-edit"></i>
             </div>
+            
         </div>
     
-    </div>
+    </div>  
 `;
+
 
 const showData = () => {
     const posts = document.getElementById("posts");
@@ -118,10 +121,10 @@ refreshData();
 
 const btn = document.querySelector(".done");
 const toast = document.querySelector(".toast");
-const closeIcon = document.querySelector(".close");
+const closeIcon = document.querySelector(".toast__close");
 const progress = document.querySelector(".progress");
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click", (e) => {
     $('.toast').toast('show')
     toast.classList.add("show");
     progress.classList.add("show");
@@ -135,18 +138,16 @@ btn.addEventListener("click", () => {
     }, 5300);
 })
 
-closeIcon.addEventListener("click", () => {
-    toast.classList.remove("show");
 
-    setTimeout(() => {
-        progress.classList.add("show");
-    }, 300);
-});
+// closeIcon.addEventListener("click", (e) => {
+//     toast.classList.remove("show");
+//     setTimeout(() => {
+//         progress.classList.add("show");
+//     }, 300);
+// });
 
 
-const searchFun = () => {
-    let filter = document.getElementById('searchItem').value;
-}
+// d
 
 function KiemtraForm() {
     var tittle = document.getElementById("textInput").value
@@ -169,11 +170,32 @@ function KiemtraForm() {
     }
     return true
 }
-// function validation(){
-//   var titler = document.getElementById('textInput').value;
 
-//   if(titler == ""){
-//     document.getElementById('username').innerHTML = "Please fill the title field";
-//     return false;
-//   }
-// }
+function bluckRemove() {
+    task_checkbox = document.querySelectorAll(".task_checkbox:checked")
+    task_checkbox.forEach(element => {
+        const tempIndex = data.indexOf(data.find((item) => item.id === element.value));
+        console.log(tempIndex);
+        data.splice(tempIndex, 1);
+    });
+    localStorage.setItem("data", JSON.stringify(data));
+    refreshData();
+}
+
+
+// var search_input = document.querySelector("#search_input");
+
+// search_input.addEventListener("keyup", function(e) {
+//     var span_items = document.querySelectorAll(".table_body .name span");
+//     var table_body = document.querySelector(".table_body ul");
+//     var search_item = e.target.value.toLowerCase();
+
+//     span_items.forEach(function(item) {
+//         if (item.textContent.toLowerCase().indexOf(search_item) != -1) {
+//             item.closest("p").style.display = "block";
+//         } else {
+//             item.closest("p").style.display = "none";
+//         }
+//     })
+
+// });
