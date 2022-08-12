@@ -14,7 +14,7 @@ document.getElementById("add").addEventListener("click", (e) => {
     if (isValid(tempData)) {
         data.push(tempData);
 
-        showData();
+        showData(data);
         msg.innerHTML = "Thêm thành công";
         localStorage.setItem("data", JSON.stringify(data));
     }
@@ -96,7 +96,7 @@ const renderRow = (data) => `
 `;
 
 
-const showData = () => {
+const showData = (data) => {
     const posts = document.getElementById("posts");
     posts.innerHTML = "";
     data.map((item) => {
@@ -113,7 +113,7 @@ const refreshData = () => {
                 JSON.parse(localStorage.getItem("data")) : [];
         })
         .then(() => {
-            showData();
+            showData(data);
         });
 };
 
@@ -183,19 +183,9 @@ function bluckRemove() {
 }
 
 
-// var search_input = document.querySelector("#search_input");
-
-// search_input.addEventListener("keyup", function(e) {
-//     var span_items = document.querySelectorAll(".table_body .name span");
-//     var table_body = document.querySelector(".table_body ul");
-//     var search_item = e.target.value.toLowerCase();
-
-//     span_items.forEach(function(item) {
-//         if (item.textContent.toLowerCase().indexOf(search_item) != -1) {
-//             item.closest("p").style.display = "block";
-//         } else {
-//             item.closest("p").style.display = "none";
-//         }
-//     })
-
-// });
+var search_input = document.querySelector("#searchItem")
+search_input.addEventListener("keyup", function(e) {
+    var search_item = e.target.value.toLowerCase();
+    const dataToRender = data.filter((e) => e.title.includes(search_item))
+    showData(dataToRender)
+})

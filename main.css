@@ -63,7 +63,7 @@ h2.font {
 
 .title {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.6em;
     color: rgb(74, 74, 74);
@@ -95,7 +95,7 @@ h2.font {
 
 .des {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.6em;
     color: rgb(74, 74, 74);
@@ -103,6 +103,7 @@ h2.font {
 
 .err {
     color: red;
+    font-size: 0.8rem;
 }
 
 
@@ -135,7 +136,7 @@ h2.font {
 
 .duedate {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.6em;
     color: rgb(74, 74, 74);
@@ -167,7 +168,7 @@ h2.font {
 
 .pri {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.6em;
     color: rgb(74, 74, 74);

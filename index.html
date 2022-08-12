@@ -24,20 +24,20 @@
                 <form class="form" id="myForm">
                     <div class="tieude">
                         <label class="title">Title:</label>
-                        <input type="text" placeholder="Text" name="" id="textInput" class="" autocomplete="off">
+                        <input type="text" placeholder="Text" name="" id="textInput" class="" autocomplete="off" onkeyup="KiemtraForm()">
                         <span class="err" id="err_title"></span>
                     </div>
                     <div class="mota">
                         <label class="des">Description:</label>
                         <div class="spacedes">
-                            <Textarea name="Description" placeholder="Description" id="textarea"></Textarea>
+                            <Textarea name="Description" placeholder="Description" id="textarea" onkeyup="KiemtraForm()"></Textarea>
                             <span class="err" id="err_des"></span>
                         </div>
                     </div>
                     <div class="dateandpriority">
                         <div class="ngaysinh">
                             <label for="duedate" class="duedate">Due Date</label>
-                            <input type="date" name="" class="spacedate" id="dateInput">
+                            <input type="date" name="" class="spacedate" id="dateInput" onkeyup="KiemtraForm()">
                             <span class="err" id="err_date"></span>
                         </div>
                         <div class="aboutprioty">
@@ -64,7 +64,7 @@
             <header class="todolist">
                 <h2>Todo list</h2>
                 <div class="searching">
-                    <input type="text" id="searchItem" onkeyup="myFunction()" placeholder="keyword" title="Type in a name">
+                    <input type="text" id="searchItem" placeholder="keyword" title="Type in a name">
                     <button type="submit">
                         <i class="search-icon ti-search"></i>
                     </button>
